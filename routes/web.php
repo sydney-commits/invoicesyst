@@ -19,8 +19,15 @@ Route::get('/layout', function(){
 
 Route::middleware(['auth'])->group(function () {
 
-    Route::get('user/dashboard',[ClientController::class,'index'])->name('user.dashboard');
+    Route::get('user/dashboard',[ClientController::class,'index'])->name('client.dashboard');
     Route::get('admin/dashboard',[AdminController::class,'index'])->name('admin.dashboard');
+
+    Route::get('user/invoices',[ClientController::class,'invoices'])->name('client.invoices');
+    Route::get('user/profile',[ClientController::class,'profile'])->name('client.profile');
+
+
+
+    
 
 
 });

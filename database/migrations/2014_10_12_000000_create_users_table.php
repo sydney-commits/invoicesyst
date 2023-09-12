@@ -23,6 +23,24 @@ return new class extends Migration
             $table->timestamps();
 
             $table->enum('role', ['admin', 'client', 'superadmin'])->default('client');
+
+            $table->string('company_name')->nullable();
+            $table->string('contact_person')->nullable();
+            
+            // Billing Address
+            $table->string('billing_street')->nullable();
+            $table->string('billing_city')->nullable();
+   
+            $table->string('billing_postal_code')->nullable();
+            $table->string('billing_country')->nullable();
+
+            $table->string('phone_number')->nullable();;
+            $table->string('alternate_phone')->nullable();
+
+
+            $table->enum('payment_method',['M-Pesa','Cash','Credit Card'])->default('Cash');
+
+
         });
     }
 

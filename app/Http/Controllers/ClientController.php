@@ -9,17 +9,17 @@ class ClientController extends Controller
 {
     public function index(){
 
-        // dd(Auth::user()->name);
 
-        if (Auth::user() && Auth::user()->role == 'client') {
-            # code...
-        } elseif(Auth::user() && Auth::user()->role == 'admin') {
-            # code...
-        } else {
-            
-        }
+        return view('clients.dashboard');
+    }
 
+    public function invoices(){
 
-        return view('client.dasboard');
+return view('clients.invoices');
+    }
+
+    public function profile(){
+
+        return view('clients.account');
     }
 }
